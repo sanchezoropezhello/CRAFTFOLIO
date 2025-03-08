@@ -1,0 +1,17 @@
+.tab-buttons {
+  .tab-btn {
+    @apply box-hover cursor-pointer rounded-full bg-light px-2 py-1.5 text-base uppercase text-dark duration-1000 before:bg-accent1 xs:px-4 xs:py-2 lg:px-6 lg:py-3 lg:text-lg;
+  }
+  .tab-btn.active {
+    @apply bg-primary text-light;
+  }
+}
+
+.tabs-container {
+  .tab-content {
+    @apply invisible h-0 translate-y-full overflow-hidden opacity-0 duration-500 ease-in-out;
+  }
+  .tab-content.active {
+    @apply visible h-auto translate-y-0 opacity-100 duration-500 ease-in-out;
+  }
+}

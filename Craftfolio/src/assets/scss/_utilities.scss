@@ -1,0 +1,258 @@
+@font-face {
+  font-family: "satoshi";
+  src:
+    url("/src/assets/fonts/satoshi/Satoshi-Black.woff2") format("woff2"),
+    url("/src/assets/fonts/satoshi/Satoshi-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src:
+    url("/src/assets/fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),
+    url("/src/assets/fonts/satoshi/Satoshi-Bold.woff2") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src:
+    url("/src/assets/fonts/satoshi/Satoshi-Medium.woff") format("woff2"),
+    url("/src/assets/fonts/satoshi/Satoshi-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src:
+    url("/src/assets/fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
+    url("/src/assets/fonts/satoshi/Satoshi-Regular.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src:
+    url("/src/assets/fonts/satoshi/Satoshi-Light.woff2") format("woff2"),
+    url("/src/assets/fonts/satoshi/Satoshi-Light.woff2") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    font-family: "satoshi", sans-serif;
+    @apply relative z-10 mx-auto box-border w-full max-w-[1920px] overflow-x-hidden duration-500;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply hidden;
+  }
+
+  ::selection {
+    @apply bg-primary text-light;
+  }
+
+  ::-moz-selection {
+    @apply bg-primary text-light;
+  }
+
+  ::-webkit-selection {
+    @apply bg-primary text-light;
+  }
+}
+
+@layer utilities {
+  .event-unset {
+    pointer-events: unset;
+  }
+
+  .display-1 {
+    @apply text-[40px] font-bold xs:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
+  }
+  .display-2 {
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  .display-3 {
+    @apply text-[36px] font-bold md:text-5xl lg:text-[56px] xl:text-6xl;
+  }
+
+  .display-4 {
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl xl:text-[52px] xxl:text-[56px];
+  }
+
+  h1,
+  .text-h1 {
+    @apply text-3xl font-bold md:text-4xl lg:text-[40px] xl:text-5xl;
+  }
+
+  h2,
+  .text-h2 {
+    @apply text-2xl font-bold md:text-3xl lg:text-4xl xl:text-[40px];
+  }
+
+  h3,
+  .text-h3 {
+    @apply text-xl font-bold md:text-2xl lg:text-[28px] xl:text-[32px];
+  }
+
+  h4,
+  .text-h4 {
+    @apply text-lg font-bold lg:text-xl xl:text-2xl;
+  }
+
+  h5,
+  .text-h5 {
+    @apply text-base font-bold lg:text-lg xl:text-xl;
+  }
+
+  h6,
+  .text-h6 {
+    @apply text-sm font-bold lg:text-base;
+  }
+
+  .initial-text-size {
+    @apply text-3xl font-bold lg:text-4xl xl:text-5xl xxl:text-6xl xxxl:text-7xl;
+  }
+  .full-text-title {
+    @apply text-2xl font-bold lg:text-3xl xxl:text-4xl xxxl:text-[40px];
+  }
+  .extra-text {
+    @apply text-[35px] xs:text-[55px] sm:text-[70px] md:text-[90px] lg:text-[100px] xl:text-[120px] xxl:text-[130px] xxxl:text-[150px] 4xl:text-[180px];
+  }
+
+  input:focus,
+  textarea:focus {
+    @apply outline-none;
+  }
+
+  .pt-120 {
+    @apply pt-[60px] md:pt-[80px] lg:pt-[100px] xl:pt-[120px];
+  }
+  .pb-120 {
+    @apply pb-[60px] md:pb-[80px] lg:pb-[100px] xl:pb-[120px];
+  }
+
+  .grid-card-wrapper {
+    // Define styles for odd elements (1st, 3rd, 5th, etc.)
+    &:nth-child(2n + 1) {
+      .splitting-wrapper.splitting .char {
+        &:before,
+        &:after {
+          animation: slideIn 5s cubic-bezier(0.7, 0, 0.1, 1) both infinite;
+          animation-delay: calc(0.3s + (100ms * var(--char-index)));
+        }
+      }
+    }
+
+    // Define styles for every 3rd element (3rd, 6th, 9th, etc.)
+    &:nth-child(3n + 1) {
+      .splitting-wrapper.splitting .char {
+        &:before,
+        &:after {
+          animation: slideIn 3s cubic-bezier(0.7, 0, 0.1, 1) both infinite;
+          animation-delay: calc(0.5s + (100ms * var(--char-index)));
+        }
+      }
+    }
+  }
+
+  // Base styles for .splitting-wrapper and .char elements
+  .splitting-wrapper {
+    &.splitting .char {
+      @apply invisible; // Hide character itself
+
+      &:before,
+      &:after {
+        @apply visible absolute;
+        content: attr(data-char);
+        animation: slideIn 7s cubic-bezier(0.7, 0, 0.1, 1) both infinite;
+        animation-delay: calc(0.1s + (100ms * var(--char-index)));
+        color: inherit;
+      }
+
+      &:after {
+        animation-name: slideIn2;
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    30%,
+    70% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    95%,
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0% 0);
+    }
+  }
+
+  @keyframes slideIn2 {
+    0%,
+    10% {
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    35%,
+    65% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    85%,
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0% 0);
+    }
+  }
+
+  .hover-opacity-item:hover > .hover-opacity:not(:hover) {
+    opacity: 0.5;
+  }
+
+  // articles swiper
+  .articles-swiper {
+    margin-left: auto;
+    margin-right: auto;
+
+    .swiper-slide:not(.swiper-slide-prev):not(.swiper-slide-active):not(
+        .swiper-slide-next
+      ) {
+      opacity: 0;
+    }
+    .article-title,
+    .article-type,
+    .article-date {
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    .swiper-slide-active {
+      .article-title,
+      .article-type,
+      .article-date {
+        opacity: 1;
+      }
+    }
+  }
+}

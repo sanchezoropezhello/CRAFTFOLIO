@@ -1,0 +1,36 @@
+.grid-lines {
+  @apply pointer-events-none absolute left-0 top-0 h-full min-h-screen w-full overflow-hidden;
+}
+.lines {
+  @apply absolute left-0 top-0 h-full w-full;
+}
+.line-vertical {
+  @apply absolute z-[-1] h-full w-[1px] bg-neutral2 dark:bg-neutral11;
+}
+@keyframes runY {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+.line-vertical::after {
+  @apply absolute left-0 top-0 block h-[30px] w-full content-[''];
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 217, 0, 0) 0%,
+    #ffd900 75%,
+    #ffd900 100%
+  );
+  animation: runY 4s linear infinite;
+}
+.line-vertical:nth-child(3n + 1)::after {
+  animation: runY 3s linear infinite;
+}
+.line-vertical:nth-child(3n + 2)::after {
+  animation: runY 5s linear infinite;
+}
+.line-horizontal {
+  @apply absolute z-[-1] h-[1px] w-full bg-neutral2 dark:bg-neutral11;
+}

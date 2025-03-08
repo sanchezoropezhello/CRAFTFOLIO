@@ -1,0 +1,50 @@
+.cursor {
+  @apply pointer-events-none absolute z-[999] h-4 w-4 scale-75 select-none rounded-full bg-dark mix-blend-overlay backdrop-blur-sm dark:bg-light;
+  transition:
+    0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+}
+
+.cursor.active {
+  @apply flex scale-[5] items-center justify-center bg-light opacity-100 dark:bg-dark;
+}
+.cursor-small {
+  @apply scale-[5] bg-light mix-blend-difference backdrop-blur-0;
+}
+.cursor-medium {
+  @apply scale-[8] bg-light mix-blend-difference backdrop-blur-0;
+}
+.cursor-large {
+  @apply scale-[12] bg-light mix-blend-difference backdrop-blur-0;
+}
+
+.cursor::before {
+  content: attr(data-text);
+  @apply absolute left-[50%] top-1/2 flex h-full w-full items-center justify-center rounded-full p-2 text-center text-[3px] text-dark opacity-0 dark:text-light;
+  transform: translate(-50%, -50%);
+}
+
+.cursor.active::before {
+  @apply opacity-100;
+}
+
+.cursor-follower {
+  @apply pointer-events-none absolute z-[999] h-10 w-10 select-none rounded-full border border-dark transition-transform duration-150 ease-out dark:border-light;
+  transform: translate(4px, 4px);
+}
+
+.cursor-follower.active {
+  @apply scale-0 opacity-30;
+}
+
+.cursor.hide,
+.cursor-follower.hide {
+  @apply hidden;
+}
+
+@media (max-width: 991px) {
+  .cursor,
+  .cursor-follower {
+    @apply hidden;
+  }
+}

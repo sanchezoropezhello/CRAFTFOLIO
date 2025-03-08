@@ -1,0 +1,14 @@
+// accordion area
+.accordion-area {
+  .accordion-item {
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      padding-top: 0;
+      transition:
+        max-height 0.5s ease,
+        padding-top 0.5s ease;
+    }
+  }
+}

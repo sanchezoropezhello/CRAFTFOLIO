@@ -1,0 +1,99 @@
+<!-- index one version 2 page -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- head -->
+<include-head />
+
+<body class="bg-neutral2 xs:p-2 dark:bg-dark duration-500">
+ 
+    <include-theme-function />
+
+    <!-- cursor -->
+    <include-cursor />
+
+    <!-- main start -->
+    <main class="relative grid grid-cols-12 gap-2">
+
+        <!-- menu list area -->
+        <include-menu-area-v6 />
+
+        <!-- profile area -->
+        <div class="col-span-12 lg:col-span-4 lg:block hidden" data-aos="fade-left">
+            <include-profile-area-v6 />
+        </div>
+
+        <!-- content -->
+        <div class="col-span-12 lg:col-span-8">
+            <div
+                class="bg-light dark:bg-neutral12 rounded-lg xxl:px-15 xl:px-10 lg:px-8 md:px-6 sm:px-4 px-2 pt-12 pb-6 min-h-screen">
+
+                <!-- title -->
+                <div class="lg:mb-15 md:mb-10 mb-8" data-aos="fade-up">
+                    <span
+                        class="text-sm xl:px-3 px-2 py-1.5 text-neutral11/80 dark:text-neutral3/80 border-[0.5px] border-neutral3 dark:border-neutral3/60 rounded-full inline-block lg:mb-5 mb-3">
+                        CONTACT
+                    </span>
+                    <h2 class="display-3 text-dark dark:text-light mb-3 shift-right" data-splitting>
+                        Let's Get In Touch
+                    </h2>
+                    <span class="text-base xl:text-lg text-neutral11 dark:text-neutral3">
+                        Fill out the form opportunities and I'll do my best to respond to your inquiry within 24 hours.
+                    </span>
+                </div>
+
+                <!-- contact form -->
+                <form action="#"
+                    class="flex flex-col lg:gap-6 gap-4 4xl:p-12 xl:p-10 lg:p-8 md:p-6 sm:p-4 p-3 border border-neutral3/20 dark:border-neutral11 rounded-xl">
+                    <div class="flex md:flex-nowrap flex-wrap lg:gap-6 gap-4">
+                        <div class="flex flex-col lg:gap-3 gap-2 lg:w-1/2 w-full">
+                            <label class="text-dark dark:text-light text-base font-normal">
+                                FULL NAME *
+                            </label>
+                            <input type="text" name="name" placeholder="Your Full Name"
+                                class="lg:py-3 py-2 lg:px-6 px-4 rounded-xl text-dark dark:text-light bg-neutral2 dark:bg-neutral11/40 border border-neutral3/20 dark:border-neutral11 placeholder:text-neutral11 dark:placeholder:text-neutral3">
+                        </div>
+                        <div class="flex flex-col lg:gap-3 gap-2 lg:w-1/2 w-full">
+                            <label class="text-dark dark:text-light text-base font-normal">
+                                EMAIL ADDRESS *
+                            </label>
+                            <input type="email" name="email" placeholder="Your Email Address"
+                                class="lg:py-3 py-2 lg:px-6 px-4 rounded-xl text-dark dark:text-light bg-neutral2 dark:bg-neutral11/40 border border-neutral3/20 dark:border-neutral11 placeholder:text-neutral11 dark:placeholder:text-neutral3">
+                        </div>
+                    </div>
+                    <div class="flex md:flex-nowrap flex-wrap lg:gap-6 gap-4">
+                        <div class="flex flex-col lg:gap-3 gap-2 lg:w-1/2 w-full">
+                            <label class="text-dark dark:text-light text-base font-normal">
+                                PHONE NUMBER *
+                            </label>
+                            <input type="text" name="phone" placeholder="Your Phone Number"
+                                class="lg:py-3 py-2 lg:px-6 px-4 rounded-xl text-dark dark:text-light bg-neutral2 dark:bg-neutral11/40 border border-neutral3/20 dark:border-neutral11 placeholder:text-neutral11 dark:placeholder:text-neutral3">
+                        </div>
+                        <div class="flex flex-col lg:gap-3 gap-2 lg:w-1/2 w-full">
+                            <label class="text-dark dark:text-light text-base font-normal">
+                                SUBJECT *
+                            </label>
+                            <input type="text" name="subject" placeholder="Subject"
+                                class="lg:py-3 py-2 lg:px-6 px-4 rounded-xl text-dark dark:text-light bg-neutral2 dark:bg-neutral11/40 border border-neutral3/20 dark:border-neutral11 placeholder:text-neutral11 dark:placeholder:text-neutral3">
+                        </div>
+                    </div>
+                    <div class="flex flex-col lg:gap-3 gap-2">
+                        <label class="text-dark dark:text-light text-base font-normal">
+                            MESSAGE *
+                        </label>
+                        <textarea name="message" placeholder="Write Your Message Here...." rows="6"
+                            class="lg:py-3 py-2 lg:px-6 px-4 rounded-xl text-dark dark:text-light bg-neutral2 dark:bg-neutral11/40 border border-neutral3/20 dark:border-neutral11 placeholder:text-neutral11 dark:placeholder:text-neutral3"></textarea>
+                    </div>
+                    <button type="submit" class="btn w-full text-dark bg-accent2 rounded-full hover:text-light">
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- main end -->
+
+    <!-- footer section -->
+</body>
+
+</html>
